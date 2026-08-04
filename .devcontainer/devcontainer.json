@@ -1,0 +1,38 @@
+{
+  "name": "Hager Flow Integration Dev",
+  // Wir nutzen direkt das offizielle, fertige Home Assistant Image
+  "image": "ghcr.io/home-assistant/home-assistant:stable",
+  "overrideCommand": false,
+  "appPort": [
+    "8123:8123",
+    "5683:5683/udp"
+  ],
+  "mounts": [
+    // Das Herzstück: Spiegelt deinen lokalen Projektordner (Workspace)
+    // direkt in das Custom-Components-Verzeichnis von Home Assistant im Container.
+    "source=${localWorkspaceFolder}/custom_components/hager_flow,target=/config/custom_components/hager_flow,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        // Nutzt das im HA-Image bereits vorinstallierte Python
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "editor.formatOnSave": true,
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        // 🔥 HIER IST DIE RETTUNG FÜR PYLANCE:
+        // Das sagt dem Editor, wo der Home Assistant Quellcode im Container liegt
+        "python.analysis.extraPaths": [
+          "/usr/src/homeassistant"
+        ]
+      }
+    }
+  }
+}

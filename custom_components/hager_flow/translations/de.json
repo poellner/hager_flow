@@ -1,0 +1,23 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "E3/DC & Hager Flow verbinden",
+        "description": "Bitte gib die Client-ID und das Client-Secret deines E3/DC / Hager Energy Kontos ein.",
+        "data": {
+          "client_id": "Client-ID",
+          "client_secret": "Client-Secret"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung konnte nicht hergestellt werden",
+      "invalid_auth": "Ungültige Authentifizierung",
+      "no_installations": "Keine Installationen in diesem Konto gefunden.",
+      "unknown": "Unerwarteter Fehler"
+    },
+    "abort": {
+      "already_configured": "Konto ist bereits konfiguriert"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Home Assistant (Debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "homeassistant",
+      "args": ["--debug", "-c", "config"],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

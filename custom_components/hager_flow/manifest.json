@@ -1,0 +1,18 @@
+{
+  "domain": "hager_flow",
+  "name": "Hager Flow",
+  "version": "1.0.0",
+  "codeowners": [
+    "@poellner"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/hager_flow",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "quality_scale": "bronze",
+  "requirements": ["mashumaro==3.22"],
+  "loggers": [
+    "custom_components.hager_flow"
+  ]
+}
